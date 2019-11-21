@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import HeaderComponent from '../header/HeaderComponent';
 import '../dashboard/home.css';
 import img from '../../assets/images/servicing.png'
-import { Link } from 'react-router-dom';
 
-class HomeComponent extends Component {
+
+class CheckVehicleStatusComponent extends Component {
     render() {
         return (
             <div className="bodycolor">
@@ -26,16 +26,27 @@ class HomeComponent extends Component {
                     </div>
                     <div className="box">
                     <div className="row"> 
-                      <div className="col-sm-6 form-group">
+                      <div className="col-sm-6 form-group"> 
+                           
                       <div className="form-group text-center">
-                     <Link to="/checkstatus">
-                     <input
-                        type="submit"
-                        name="submit"
-                        className="btn btn-warning btn-md"
-                        value="TRACK YOUR VAHICLE STATUS"
+                        <div class="input-group">
+                        <input
+                             type="text"
+                             name="trackingid"
+                             className="form-control"
+                             placeholder="Tracking ID"
                         
-                      /></Link>                                       
+                         />  
+                        <span class="input-group-btn">
+                        <input
+                            type="submit"
+                            name="submit"
+                            className="btn btn-warning btn-md"
+                            value="CHECK STATUS"
+                        
+                        />  
+                        </span>
+                        </div>                                                              
                     </div>  
                     <div className="form-group text-center">
                     <label htmlFor="or" >
@@ -69,4 +80,4 @@ class HomeComponent extends Component {
         )
     }
 }
-export default HomeComponent;
+export default CheckVehicleStatusComponent;

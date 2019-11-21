@@ -4,10 +4,26 @@ import HeaderComponent from '../../components/header/HeaderComponent';
 import img from '../../assets/images/servicing.png'
 
 class LoginComponent extends Component {
+      state = {
+        phonenumber: '',
+        password: ''
+      }
+
+      handleChange = (e) => {
+        this.setState({
+          [e.target.name]: e.target.value
+        })
+
+      }
+
+      handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.state)
+
+      }
 
     recaptchaLoaded() {
-        console.log("capcha loaded sucessfully")
-
+        console.log("capcha loaded sucessfully");
     }
 
     render() {
@@ -41,7 +57,8 @@ class LoginComponent extends Component {
                             type="text"
                             name="phonenumber"
                             id="phonenumber"
-                            className="form-control"                            
+                            className="form-control"
+                            onChange={this.handleChange.bind(this)}                       
                           />                                       
                     </div>     
                      <div className="form-group">
@@ -53,7 +70,8 @@ class LoginComponent extends Component {
                             type="password"
                             name="password"
                             id="password"
-                            className="form-control"                            
+                            className="form-control"  
+                             onChange={this.handleChange.bind(this)}                             
                           />                                       
                     </div>    
                      <div className="form-group text-right">
@@ -74,7 +92,7 @@ class LoginComponent extends Component {
                         name="submit"
                         className="btn btn-warning btn-md form-control"
                         value="LOGIN"
-                        
+                        onClick={this.handleSubmit.bind(this)}
                       />                                          
                     </div>  
                     

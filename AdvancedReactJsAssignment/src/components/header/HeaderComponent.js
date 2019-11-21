@@ -6,11 +6,7 @@ import {
     NavbarBrand,
     Nav,
     NavItem,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem,
+    NavLink, 
     Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
@@ -25,7 +21,7 @@ class HeaderComponent extends Component {
                     <Collapse navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <Link to="/"><NavLink>HOME</NavLink></Link>
+                                <Link to="/home"><NavLink>HOME</NavLink></Link>
                             </NavItem>
                             <NavItem>
                                 <Link to="/aboutus"><NavLink>ABOUT US</NavLink></Link>
