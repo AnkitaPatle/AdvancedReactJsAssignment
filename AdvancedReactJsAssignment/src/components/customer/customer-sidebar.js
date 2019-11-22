@@ -1,12 +1,15 @@
 import React, { useState } from 'react'
-import { NavItem, NavLink, Nav, Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
+import { NavItem, NavLink, Nav, Dropdown, DropdownItem, DropdownToggle, DropdownMenu ,  Collapse, Button, CardBody, Card} from 'reactstrap';
 import { Link } from 'react-router-dom';
 import './customer.css';
 
 const CustomerSidebarComponent = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+   const [collapse, setCollapse] = useState(false);
 
-  const toggle = () => setDropdownOpen(!dropdownOpen);
+  const toggle = () => setCollapse(!collapse);
+
+  // const toggle = () => setDropdownOpen(!dropdownOpen);
   return (
     <div className="styledsidenav">
       <div className="">
@@ -16,7 +19,11 @@ const CustomerSidebarComponent = (props) => {
               <Link to="/"><NavLink>DASHBOARD</NavLink></Link>
             </NavItem>
 
-            <Dropdown nav isOpen={dropdownOpen} toggle={toggle}>
+            <NavItem>
+              <Link to="/" onClick={toggle}><NavLink>SERVICE</NavLink></Link>
+            </NavItem>
+
+            {/* <Dropdown nav isOpen={dropdownOpen} toggle={toggle} >
               <DropdownToggle nav caret>
                 SERVICE
             </DropdownToggle>
@@ -25,7 +32,20 @@ const CustomerSidebarComponent = (props) => {
                 <DropdownItem divider />
                 <DropdownItem>SERVICE HISTORY</DropdownItem>
               </DropdownMenu>
-            </Dropdown>
+            </Dropdown> */}
+
+            <Collapse
+              isOpen={collapse}
+            >
+              <Card>
+                <CardBody>
+                  Anim pariatur cliche reprehenderit,
+                enim eiusmod high life accusamus terry richardson ad squid. Nihil
+                anim keffiyeh helvetica, craft beer labore wes anderson cred
+                nesciunt sapiente ea proident.
+                </CardBody>
+              </Card>
+            </Collapse>
           </Nav>
 
         </div>

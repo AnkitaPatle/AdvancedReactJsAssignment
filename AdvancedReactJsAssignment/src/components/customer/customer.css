@@ -30,9 +30,11 @@
     padding-top: 10px;
 
   }
-.nav-link[data-toggle].collapsed:after {
-    content: "▾";
+  
+.dropdown-menu {
+  background-color: #222326;
 }
-.nav-link[data-toggle]:not(.collapsed):after {
-    content: "▴";
+
+.dropdown-item {
+  color: #d0d0d0;
 }
